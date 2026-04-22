@@ -1,2 +1,6 @@
 bin
 obj
+PlayerService\bin
+PlayerService\obj
+MatchService\bin
+MatchService\obj

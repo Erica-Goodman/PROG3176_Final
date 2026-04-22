@@ -27,7 +27,7 @@ using (var scope = app.Services.CreateScope())
     // Add initial data
     context.Players.Add(new Player { Id = 1, Name = "Carlos Alcaraz", Country = "Spain" });
     context.Players.Add(new Player { Id = 2, Name = "Félix Auger-Aliassime", Country = "Canada" });
-    context.Players.Add(new Player { Id = 3, Name = "Daniil Medvedev", Country = "" });
+    context.Players.Add(new Player { Id = 3, Name = "Daniil Medvedev"});
     context.Players.Add(new Player { Id = 4, Name = "Jannik Sinner", Country = "Italy" });
     context.SaveChanges();
 }

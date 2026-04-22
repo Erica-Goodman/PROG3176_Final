@@ -33,7 +33,7 @@ public class MatchesController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Player> CreateMatch(TennisMatch newMatch)
+    public ActionResult<TennisMatch> CreateMatch(TennisMatch newMatch)
     {
         _context.MatchList.Add(newMatch);
         _context.SaveChanges();
