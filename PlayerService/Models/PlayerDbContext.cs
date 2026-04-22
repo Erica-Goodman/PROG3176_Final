@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace PlayerService.Controllers;
+namespace PlayerService.Models;
 
 // modeled after the Microsoft "Create a controller-based web API" tutorial
 public class PlayerDbContext : DbContext

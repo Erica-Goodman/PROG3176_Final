@@ -1,4 +1,4 @@
-namespace PlayerService.Controllers;
+namespace PlayerService.Models;
 
 public class Player
 {
