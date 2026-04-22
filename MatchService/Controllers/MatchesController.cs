@@ -8,6 +8,12 @@ namespace MatchService.Controllers;
 [Route("[controller]")]
 public class MatchesController : ControllerBase
 {
+    private MatchDbContext _context;
+    public MatchesController(MatchDbContext context)
+    {
+        _context = context;
+    }
+
     [HttpGet]
     public ActionResult<IEnumerable<TennisMatch>> GetAllMatches()
     {
