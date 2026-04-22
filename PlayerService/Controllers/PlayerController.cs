@@ -7,6 +7,12 @@ namespace PlayerService.Controllers;
 [Route("[controller]")]
 public class PlayerController : ControllerBase
 {
+    private PlayerDbContext _context;
+    public PlayerController(PlayerDbContext context)
+    {
+        _context = context;
+    }
+
     [HttpGet(Name = "GetAllPlayers")]
     public IEnumerable<Player> GetAllPlayers()
     {
@@ -19,7 +25,7 @@ public class PlayerController : ControllerBase
         return null;
     }
 
-    [HttpGet(Name = "AddPlayer")]
+    [HttpPost(Name = "AddPlayer")]
     public Player AddPlayer(int id)
     {
         return null;
