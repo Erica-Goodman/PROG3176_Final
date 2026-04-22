@@ -19,6 +19,19 @@ builder.Services.AddDbContext<PlayerDbContext>(opt =>
 
 var app = builder.Build();
 
+// Seed the database
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<PlayerDbContext>();
+    
+    // Add initial data
+    context.Players.Add(new Player { Id = 1, Name = "Carlos Alcaraz", Country = "Spain" });
+    context.Players.Add(new Player { Id = 2, Name = "Félix Auger-Aliassime", Country = "Canada" });
+    context.Players.Add(new Player { Id = 3, Name = "Daniil Medvedev", Country = "" });
+    context.Players.Add(new Player { Id = 4, Name = "Jannik Sinner", Country = "Italy" });
+    context.SaveChanges();
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
