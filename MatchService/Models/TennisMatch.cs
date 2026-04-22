@@ -1,6 +1,6 @@
 namespace MatchService.Models;
 
-public class Match
+public class TennisMatch
 {
     public int Id { get; set; }
     public List<string>[2] Players { get; set; } = ["", ""];
