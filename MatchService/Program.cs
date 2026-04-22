@@ -27,7 +27,7 @@ using (var scope = app.Services.CreateScope())
     // Add initial data
     context.MatchList.Add(new TennisMatch { Id = 1, Players = [4,1], Score = "7-6(5), 6-3" });
     context.MatchList.Add(new TennisMatch { Id = 2, Players = [2,3], Score = "6-4, 3-6, 6-3" });
-    context.MatchList.Add(new TennisMatch { Id = 2, Players = [4,2]});
+    context.MatchList.Add(new TennisMatch { Id = 3, Players = [4,2]});
     context.SaveChanges();
 }
 
