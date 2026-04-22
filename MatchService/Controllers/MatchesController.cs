@@ -17,24 +17,41 @@ public class MatchesController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<TennisMatch>> GetAllMatches()
     {
-        return null;
+        return _context.MatchList.ToList();
+
     }
 
     [HttpGet("{id}")]
     public ActionResult<TennisMatch> GetMatch(int id)
     {
-        return null;
+        var tennisMatch = _context.MatchList.Find(id);
+        if (tennisMatch == null)
+        {
+            return NotFound();
+        }
+        return tennisMatch;
     }
 
     [HttpPost]
     public ActionResult<Player> CreateMatch(TennisMatch newMatch)
     {
-        return null;
+        _context.MatchList.Add(newMatch);
+        _context.SaveChanges();
+
+        return CreatedAtAction(nameof(GetMatch), new {id = newMatch.Id}, newMatch);
     }
 
     [HttpDelete("{id}")]
     public ActionResult<TennisMatch> DeleteMatch(int id)
     {
-        return null;
+        var tennisMatch = _context.MatchList.Find(id);
+        if (tennisMatch == null)
+        {
+            return NotFound();
+        }
+        _context.MatchList.Remove(tennisMatch);
+        _context.SaveChanges();
+
+        return Ok();
     }
 }
