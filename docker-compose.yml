@@ -1,0 +1,18 @@
+services:
+  players:
+    image: players
+    build: 
+      context: ./PlayerService
+    expose:
+      - "80"
+    ports:
+      -"8080:80"
+    
+  matches:
+    image: matches
+    build: 
+      context: ./MatchService
+    expose:
+      - "80"
+    ports:
+      -"8002:80"
