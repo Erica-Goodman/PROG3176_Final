@@ -3,16 +3,12 @@ services:
     image: players
     build: 
       context: ./PlayerService
-    expose:
-      - "80"
     ports:
-      -"8080:80"
+      - "5209:5209"
     
   matches:
     image: matches
     build: 
       context: ./MatchService
-    expose:
-      - "80"
     ports:
-      -"8002:80"
+      - "5093:5903"
