@@ -51,6 +51,6 @@ public class PlayersController : ControllerBase
         _context.Players.Remove(player);
         _context.SaveChanges();
 
-        return Ok();
+        return Ok(new{message = "Player successfully deleted."});
     }
 }
